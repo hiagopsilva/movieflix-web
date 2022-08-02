@@ -2,15 +2,10 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
-import { Footer, Header, If, Loading } from '~/components';
+import { CardFilm, Footer, Header, If, Loading } from '~/components';
 import {
-  Banner,
-  CardFilm,
   Container,
   Content,
-  ContentAuthor,
-  ContentCardFilm,
-  Line,
   Wrapper,
   WrapperContent,
   WrapperListFilms,
@@ -50,24 +45,7 @@ const Home: FC<Props> = ({
         <WrapperListFilms>
           <If condition={!isEmpty(filmList)}>
             {filmList.map((item: any) => (
-              <CardFilm>
-                <Banner src={item.banner} />
-                <ContentCardFilm>
-                  <span className="title">{item.title}</span>
-                  <span className="description">{item.description}</span>
-                  <ContentAuthor>
-                    <Line>
-                      <h4>Diretor: &nbsp;</h4>
-
-                      <span className="director">{item.director}</span>
-                    </Line>
-                    <Line>
-                      <h4>Produtor: &nbsp;</h4>
-                      <span className="producer"> {item.producer}</span>
-                    </Line>
-                  </ContentAuthor>
-                </ContentCardFilm>
-              </CardFilm>
+              <CardFilm dataFilm={item} />
             ))}
           </If>
         </WrapperListFilms>
