@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
-import { inject, observer } from 'mobx-react';
 import { FilmStore } from '~/stores';
+import { inject, observer } from '~/utils';
 
 import Home from './Home';
 

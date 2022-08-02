@@ -1,5 +1,3 @@
-/* eslint-disable no-empty-pattern */
-/* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
 import { WrapperListFilms } from '~/atoms';
 import { Button, Footer, Header, If, Loading } from '~/components';

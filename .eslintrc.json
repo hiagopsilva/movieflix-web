@@ -27,7 +27,6 @@
     "rules": {
       "no-any": "off",
       "@typescript-eslint/no-unused-vars": "error",
-      // "@typescript-eslint/no-unused-vars": "off",
       "camelcase": "off",
       "no-underscore-dangle": "off",
       "no-undef": "off",

@@ -1,5 +1,4 @@
-import ReactLoading from 'react-loading';
-import { getTheme, pxToRem, styled } from '~/utils';
+import { ReactLoading, getTheme, pxToRem, styled } from '~/utils';
 
 // Colors
 const primaryLight = getTheme('primary.light');
