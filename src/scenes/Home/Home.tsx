@@ -4,7 +4,7 @@ import { Button, Footer, Header, If, Loading } from '~/components';
 import { Container, Wrapper } from './styles';
 
 type Props = {
-  listFilms: any[];
+  listFilms: Film.Item[];
   total: number;
   limitPages: boolean;
   loading: boolean;

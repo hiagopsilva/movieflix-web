@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 import { Banner, Container, ContentAuthor, ContentCardFilm } from './styles';
 
-type Props = { dataFilm: any };
+type Props = {
+  dataFilm: Film.Item;
+};
 
 const CardFilm: FC<Props> = ({ dataFilm }) => (
   <Container>

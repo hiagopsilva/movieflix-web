@@ -4,7 +4,7 @@ import { CardFilm, If } from '~/components';
 import { Container, Content, Wrapper } from './styles';
 
 type Props = {
-  listFilms: any;
+  listFilms: Film.Item[];
   total: number;
 };
 
@@ -20,7 +20,7 @@ const WrapperListFilms: FC<Props> = ({ listFilms, total }) => (
 
     <Content>
       <If condition={!isEmpty(listFilms)}>
-        {listFilms.map((item: any) => (
+        {listFilms.map((item: Film.Item) => (
           <CardFilm dataFilm={item} />
         ))}
       </If>

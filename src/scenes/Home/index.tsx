@@ -9,19 +9,12 @@ type Props = {
 };
 
 const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
-  const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(0);
-  const [limitPages, setLimitPages] = useState(0);
   const [loading, setLoading] = useState(true);
 
   const loadingFilms = async () => {
     setLoading(true);
 
-    const data = await film.list(page);
-
-    setTotal(data.total);
-    setLimitPages(data.pages);
-    setPage((page) => ++page);
+    await film.list();
 
     setLoading(false);
   };
@@ -33,9 +26,9 @@ const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
   return (
     <Home
       listFilms={film.data}
-      total={total}
+      total={film.total}
       loadingMoreFilms={loadingFilms}
-      limitPages={limitPages >= page}
+      limitPages={film.limitPages >= film.page}
       loading={loading}
     />
   );
