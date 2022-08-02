@@ -2,17 +2,12 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
+import { WrapperListFilms } from '~/atoms';
 import { Button, CardFilm, Footer, Header, If, Loading } from '~/components';
-import {
-  Container,
-  Content,
-  Wrapper,
-  WrapperContent,
-  WrapperListFilms,
-} from './styles';
+import { Container, Content, Wrapper, WrapperContent } from './styles';
 
 type Props = {
-  filmList: any[];
+  listFilms: any[];
   total: number;
   limitPages: boolean;
   loading: boolean;
@@ -21,7 +16,7 @@ type Props = {
 };
 
 const Home: FC<Props> = ({
-  filmList,
+  listFilms,
   total,
   limitPages,
   loading,
@@ -32,23 +27,7 @@ const Home: FC<Props> = ({
     <Container>
       <Header />
 
-      <Content>
-        <WrapperContent>
-          <h1>Lista de Filmes</h1>
-
-          <h4>
-            Total de <span>{total} resultados</span>
-          </h4>
-        </WrapperContent>
-
-        <WrapperListFilms>
-          <If condition={!isEmpty(filmList)}>
-            {filmList.map((item: any) => (
-              <CardFilm dataFilm={item} />
-            ))}
-          </If>
-        </WrapperListFilms>
-      </Content>
+      <WrapperListFilms listFilms={listFilms} total={total} />
 
       <If condition={loading}>
         <Loading />
@@ -57,6 +36,7 @@ const Home: FC<Props> = ({
       <If condition={limitPages}>
         <Button onClick={loadingMoreFilms} label="Carregar mais" />
       </If>
+
       <Footer />
     </Container>
   </Wrapper>

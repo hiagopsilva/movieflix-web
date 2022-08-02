@@ -43,7 +43,7 @@ const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
 
   return (
     <Home
-      filmList={film.data}
+      listFilms={film.data}
       total={total}
       loadingMoreFilms={loadingMoreFilms}
       limitPages={limitPages >= page}
