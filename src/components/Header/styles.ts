@@ -5,8 +5,11 @@ export const Container = styled.div`
   height: 60px;
 
   background-color: #111411;
-  /* background-color: #313136; */
-  padding: 0 90px 0 90px;
+  padding: 0 60px 0 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h1 {
     color: #46eb34;
