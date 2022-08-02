@@ -1,10 +1,9 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
-import { isEmpty } from 'lodash';
 import { WrapperListFilms } from '~/atoms';
-import { Button, CardFilm, Footer, Header, If, Loading } from '~/components';
-import { Container, Content, Wrapper, WrapperContent } from './styles';
+import { Button, Footer, Header, If, Loading } from '~/components';
+import { Container, Wrapper } from './styles';
 
 type Props = {
   listFilms: any[];

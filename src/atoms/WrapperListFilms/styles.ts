@@ -11,15 +11,13 @@ const primaryMain = getTheme('primary.main');
 export const Wrapper = styled.div`
   width: 100%;
 
-  color: ${primaryLight};
-
   display: flex;
   flex-direction: column;
 
   font-family: 'Manrope';
+  color: ${primaryLight};
 
   padding: 0 ${pxToRem(50)};
-
   margin-bottom: ${pxToRem(32)};
 `;
 
@@ -30,14 +28,6 @@ export const Container = styled.div`
   align-items: center;
 
   margin: ${pxToRem(16)} 0;
-
-  @media ${inMobile} {
-    flex-direction: column;
-  }
-
-  @media ${inTablet} {
-    flex-direction: column;
-  }
 
   h4 {
     margin-top: ${pxToRem(8)};
@@ -50,6 +40,14 @@ export const Container = styled.div`
 
   span {
     color: ${primaryMain};
+  }
+
+  @media ${inMobile} {
+    flex-direction: column;
+  }
+
+  @media ${inTablet} {
+    flex-direction: column;
   }
 `;
 

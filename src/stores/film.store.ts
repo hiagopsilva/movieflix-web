@@ -1,10 +1,7 @@
-import { isEmpty } from 'lodash';
 import { action, makeObservable, observable } from 'mobx';
-import { persist } from 'mobx-persist';
 import { FilmAPI } from '~/services/api';
 
 export default class FilmStore {
-  // @persist('object')
   @observable
   data: any[] = [];
 

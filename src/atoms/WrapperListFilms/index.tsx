@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
 import { CardFilm, If } from '~/components';
 import { Container, Content, Wrapper } from './styles';
-// import { Wrapper } from './styles';
 
 type Props = {
   listFilms: any;
