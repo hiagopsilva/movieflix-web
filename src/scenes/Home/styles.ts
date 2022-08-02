@@ -1,11 +1,19 @@
-import { styled } from '~/utils';
+import { getTheme, styled } from '~/utils';
+
+const screenHeight = getTheme('screenHeight');
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  height: auto;
+`;
 
 export const Container = styled.div`
   width: 100%;
-  /* height: 100vh; */
   background: #313136;
-  /* background: #111411; */
 
+  /* background: #111411; */
   /* color: #46eb34; */
 
   display: flex;
@@ -16,7 +24,6 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-  height: 100vh;
 
   color: #fff;
 
@@ -25,7 +32,7 @@ export const Content = styled.div`
 
   font-family: 'Manrope';
 
-  padding: 0 60px 0 60px;
+  padding: 0 50px 0 50px;
 `;
 
 export const WrapperContent = styled.div`
@@ -36,30 +43,45 @@ export const WrapperContent = styled.div`
 
   span {
     margin-top: 8px;
+    padding: 0 10px 0 10px;
+  }
+
+  h1 {
+    padding: 0 10px 0 10px;
   }
 `;
 
 export const WrapperListFilms = styled.div`
   width: 100%;
-  height: 100vh;
 
   display: flex;
   flex-wrap: wrap;
 `;
 
 export const CardFilm = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 25%;
+  transform: scale(0.9);
 
   background-color: #111411;
-  border-radius: 8px;
-  margin-right: 16px;
+  border-radius: 4px;
+  margin-top: 8px;
 
   display: flex;
   flex-direction: column;
 
-  &.hover {
+  span {
+    display: block;
+  }
+
+  &:hover {
     cursor: pointer;
+    transform: scale(1);
+    z-index: 1;
+
+    img {
+      filter: grayscale(0%);
+      filter: blur(0px);
+    }
   }
 `;
 
@@ -67,8 +89,10 @@ export const Banner = styled.img`
   width: 100%;
   height: 180px;
 
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  filter: blur(0.5px) grayscale(100%);
+
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 `;
 
 export const ContentCardFilm = styled.div`
@@ -76,11 +100,39 @@ export const ContentCardFilm = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  flex: 1;
+
+  h4 {
+    font-size: 12px;
+  }
 `;
 
-export const Title = styled.span``;
+export const ContentAuthor = styled.div`
+  display: flex;
+  flex-direction: column;
 
-export const Description = styled.span``;
+  margin-top: auto;
+`;
+
+export const Line = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  &:first-child {
+    margin-top: 30px;
+  }
+`;
+
+export const Title = styled.span`
+  font-size: 22px;
+`;
+
+export const Description = styled.span`
+  font-size: 12px;
+`;
 
 export const Director = styled.span``;
 

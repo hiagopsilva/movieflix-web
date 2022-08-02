@@ -1,3 +1,3 @@
-const { REACT_APP_ENV, REACT_APP_API_URL, REACT_APP_X_TOKEN } = process.env;
+const { REACT_APP_ENV, REACT_APP_API_URL } = process.env;
 
-export { REACT_APP_ENV, REACT_APP_API_URL, REACT_APP_X_TOKEN };
+export { REACT_APP_ENV, REACT_APP_API_URL };
