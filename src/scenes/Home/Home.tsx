@@ -10,21 +10,28 @@ import {
   Content,
   ContentAuthor,
   ContentCardFilm,
-  Description,
-  Director,
   Line,
-  Producer,
-  Title,
   Wrapper,
   WrapperContent,
   WrapperListFilms,
+  WrapperLoading,
 } from './styles';
 
 type Props = {
   filmList: any[];
+  total: number;
+  limitPages: boolean;
+
+  loadingMoreFilms: () => void;
 };
 
-const Home: FC<Props> = ({ filmList }): JSX.Element => (
+const Home: FC<Props> = ({
+  filmList,
+  total,
+  limitPages,
+
+  loadingMoreFilms,
+}): JSX.Element => (
   <Wrapper>
     <Container>
       <Header />
@@ -33,7 +40,9 @@ const Home: FC<Props> = ({ filmList }): JSX.Element => (
         <WrapperContent>
           <h1>Lista de Filmes</h1>
 
-          <span>Total de {filmList.length} resultados</span>
+          <h4>
+            Total de <span>{total} resultados</span>
+          </h4>
         </WrapperContent>
 
         <WrapperListFilms>
@@ -42,17 +51,17 @@ const Home: FC<Props> = ({ filmList }): JSX.Element => (
               <CardFilm>
                 <Banner src={item.banner} />
                 <ContentCardFilm>
-                  <Title>{item.title}</Title>
-                  <Description>{item.description}</Description>
+                  <span className="title">{item.title}</span>
+                  <span className="description">{item.description}</span>
                   <ContentAuthor>
                     <Line>
                       <h4>Diretor: &nbsp;</h4>
 
-                      <Director>{item.director}</Director>
+                      <span className="director">{item.director}</span>
                     </Line>
                     <Line>
                       <h4>Produtor: &nbsp;</h4>
-                      <Producer> {item.producer}</Producer>
+                      <span className="producer"> {item.producer}</span>
                     </Line>
                   </ContentAuthor>
                 </ContentCardFilm>
@@ -62,6 +71,11 @@ const Home: FC<Props> = ({ filmList }): JSX.Element => (
         </WrapperListFilms>
       </Content>
 
+      <If condition={limitPages}>
+        <WrapperLoading onClick={loadingMoreFilms}>
+          <span>Carregar mais </span>
+        </WrapperLoading>
+      </If>
       <Footer />
     </Container>
   </Wrapper>

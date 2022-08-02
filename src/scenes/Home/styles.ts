@@ -1,7 +1,5 @@
 import { getTheme, styled } from '~/utils';
 
-const screenHeight = getTheme('screenHeight');
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,9 +10,6 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 100%;
   background: #313136;
-
-  /* background: #111411; */
-  /* color: #46eb34; */
 
   display: flex;
   flex-direction: column;
@@ -33,21 +28,29 @@ export const Content = styled.div`
   font-family: 'Manrope';
 
   padding: 0 50px 0 50px;
+
+  margin-bottom: 32px;
 `;
 
 export const WrapperContent = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   margin: 16px 0;
 
-  span {
+  h4 {
     margin-top: 8px;
     padding: 0 10px 0 10px;
   }
 
   h1 {
     padding: 0 10px 0 10px;
+  }
+
+  span {
+    color: #46eb34;
   }
 `;
 
@@ -73,6 +76,10 @@ export const CardFilm = styled.div`
     display: block;
   }
 
+  span.description {
+    color: #f9f9f9;
+  }
+
   &:hover {
     cursor: pointer;
     transform: scale(1);
@@ -81,6 +88,14 @@ export const CardFilm = styled.div`
     img {
       filter: grayscale(0%);
       filter: blur(0px);
+    }
+
+    span.title {
+      color: #46eb34;
+    }
+
+    h4 {
+      color: #46eb34;
     }
   }
 `;
@@ -106,6 +121,15 @@ export const ContentCardFilm = styled.div`
   h4 {
     font-size: 12px;
   }
+
+  span.title {
+    font-size: 22px;
+  }
+
+  span.description {
+    font-size: 12px;
+    text-align: justify;
+  }
 `;
 
 export const ContentAuthor = styled.div`
@@ -126,15 +150,19 @@ export const Line = styled.div`
   }
 `;
 
-export const Title = styled.span`
-  font-size: 22px;
+export const WrapperLoading = styled.button`
+  margin: auto;
+
+  margin-bottom: 20px;
+
+  cursor: pointer;
+  background-color: #46eb34;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+
+  span {
+    font-size: 16px;
+    color: #111411;
+  }
 `;
-
-export const Description = styled.span`
-  font-size: 12px;
-  text-align: justify;
-`;
-
-export const Director = styled.span``;
-
-export const Producer = styled.span``;

@@ -13,14 +13,14 @@ export default class FilmStore {
   }
 
   @action
-  list = async (): Promise<any | null> => {
+  list = async (page: number): Promise<any | null> => {
     try {
-      const response = await FilmAPI.list();
+      const response = await FilmAPI.list(page);
 
       if (response) {
-        this.data = response.docs;
+        this.data = [...this.data, ...response.docs];
 
-        return response.docs;
+        return response;
       }
 
       return null;

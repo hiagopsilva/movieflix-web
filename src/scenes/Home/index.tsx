@@ -1,3 +1,6 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
 import React, { FC, useEffect, useState } from 'react';
 import { inject, observer } from 'mobx-react';
 import { FilmStore } from '~/stores';
@@ -9,36 +12,37 @@ type Props = {
 };
 
 const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
-  const [filmList, setFilmList] = useState([]);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [limitPages, setLimitPages] = useState(0);
 
-  const handle = async () => {
-    const data = await film.list();
+  const loadingFilms = async () => {
+    const data = await film.list(page);
 
-    setFilmList(data);
+    setTotal(data.total);
+    setLimitPages(data.pages);
+    setPage((page) => ++page);
+  };
+
+  const loadingMoreFilms = async () => {
+    const data = await film.list(page);
+
+    setTotal(data.total);
+    setPage((page) => ++page);
   };
 
   useEffect(() => {
-    handle();
-
-    let timer: any = null;
-
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (timer !== null) {
-          clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-          if (window.scrollY > 700) {
-            console.log('aqui', window.screenY, window.scrollY);
-          }
-        }, 30);
-      },
-      false,
-    );
+    loadingFilms();
   }, []);
 
-  return <Home filmList={filmList} />;
+  return (
+    <Home
+      filmList={film.data}
+      total={total}
+      loadingMoreFilms={loadingMoreFilms}
+      limitPages={limitPages >= page}
+    />
+  );
 };
 
 export default inject('film')(observer(HomeContainer));
