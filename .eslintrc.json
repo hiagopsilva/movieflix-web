@@ -38,6 +38,7 @@
       "sonarjs/no-duplicate-string": 0,
       "react/prop-types": 0,
       "no-plusplus": "off",
+      "no-alert":"off",
       "no-param-reassign": "off",
       "react-hooks/exhaustive-deps": "off",
       "react/display-name": 0,
