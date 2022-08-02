@@ -1,3 +1,4 @@
+import { IconLogo } from '~/assets/svg';
 import { getTheme, pxToRem, styled } from '~/utils';
 
 // Colors
@@ -20,4 +21,11 @@ export const Container = styled.div`
     font-size: ${pxToRem(24)};
     font-family: 'Manrope';
   }
+`;
+
+export const IconLogoStyled = styled(IconLogo).attrs({
+  width: pxToRem(40),
+  height: pxToRem(40),
+})`
+  margin-right: ${pxToRem(6)};
 `;

@@ -1,5 +1,4 @@
 import { Request } from '~/services';
-import { handleResponse } from '~/utils/entities';
 
 export const list = async (page: number): Promise<Film.List | null> => {
   try {
@@ -7,7 +6,7 @@ export const list = async (page: number): Promise<Film.List | null> => {
 
     return data;
   } catch (error) {
-    handleResponse(error);
+    alert({ message: `Desculpe, ocorreu um erro!`, type: 'error' });
     return null;
   }
 };
