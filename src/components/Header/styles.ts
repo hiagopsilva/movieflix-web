@@ -22,7 +22,9 @@ export const Container = styled.div`
   }
 
   img {
-    height: ${pxToRem(60)};
-    width: ${pxToRem(60)};
+    width: ${pxToRem(80)};
+    height: ${pxToRem(80)};
+
+    margin-right: -${pxToRem(12)};
   }
 `;
