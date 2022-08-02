@@ -88,6 +88,10 @@ export const ContentCardFilm = styled.div`
     font-size: ${pxToRem(12)};
     text-align: justify;
   }
+
+  @media ${inMobile} {
+    padding: ${pxToRem(24)} ${pxToRem(20)};
+  }
 `;
 
 export const ContentAuthor = styled.div`

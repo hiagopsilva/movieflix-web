@@ -18,6 +18,10 @@ export const Wrapper = styled.div`
 
   padding: 0 ${pxToRem(50)};
   margin-bottom: ${pxToRem(32)};
+
+  @media ${inMobile} {
+    padding: 0 ${pxToRem(24)};
+  }
 `;
 
 export const Container = styled.div`
