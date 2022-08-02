@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  font-family: 'Manrope';
   color: ${primaryLight};
 
   padding: 0 ${pxToRem(50)};

@@ -19,8 +19,6 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  font-family: 'Manrope';
 `;
 
 export const WrapperListFilms = styled.div`

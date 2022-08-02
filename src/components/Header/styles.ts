@@ -18,7 +18,6 @@ export const Container = styled.div`
   h1 {
     color: ${primaryMain};
     font-size: ${pxToRem(24)};
-    font-family: 'Manrope';
   }
 
   img {
