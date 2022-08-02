@@ -11,7 +11,6 @@ import { CssBaseline } from '@material-ui/core';
 import Routes from '~/routes';
 import store from '~/stores';
 import { breakpoints, colors, radius, spacings } from '~/theme';
-import { Home } from './scenes';
 import * as serviceWorker from './serviceWorker';
 
 import GlobalStyles from './theme/global';
@@ -37,8 +36,7 @@ ReactDOM.render(
       <Router history={routing}>
         <Toastify.ToastContainer />
 
-        {/* <Routes /> */}
-        <Home />
+        <Routes />
       </Router>
       <GlobalStyles />
     </ThemeProvider>
