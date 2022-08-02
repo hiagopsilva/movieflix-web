@@ -1,4 +1,4 @@
-import { getTheme, styled } from '~/utils';
+import { getTheme, pxToRem, styled } from '~/utils';
 
 // Colors
 const primaryLight = getTheme('primary.light');
@@ -6,7 +6,7 @@ const primaryDark = getTheme('primary.dark');
 
 export const Container = styled.div`
   width: 100%;
-  height: 120px;
+  height: ${pxToRem(140)};
   background-color: ${primaryDark};
 
   color: ${primaryLight};

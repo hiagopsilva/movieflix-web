@@ -1,5 +1,5 @@
 import ReactLoading from 'react-loading';
-import { getTheme, styled } from '~/utils';
+import { getTheme, pxToRem, styled } from '~/utils';
 
 // Colors
 const primaryContrast = getTheme('primary.contrast');
@@ -18,8 +18,8 @@ export const Container = styled.div`
   opacity: 0.6;
 `;
 export const Wrapper = styled(ReactLoading)`
-  width: 40px;
-  height: 40px;
+  width: ${pxToRem(40)};
+  height: ${pxToRem(40)};
   color: ${primaryLight};
 
   margin: auto;

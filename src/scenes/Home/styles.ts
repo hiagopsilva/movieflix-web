@@ -1,4 +1,4 @@
-import { getTheme, styled } from '~/utils';
+import { getTheme, pxToRem, styled } from '~/utils';
 
 // Breakpoint
 const inMobile = getTheme('inMobile');
@@ -41,9 +41,9 @@ export const Content = styled.div`
 
   font-family: 'Manrope';
 
-  padding: 0 50px 0 50px;
+  padding: 0 ${pxToRem(50)};
 
-  margin-bottom: 32px;
+  margin-bottom: ${pxToRem(32)};
 `;
 
 export const WrapperContent = styled.div`
@@ -52,7 +52,7 @@ export const WrapperContent = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin: 16px 0;
+  margin: ${pxToRem(16)} 0;
 
   @media ${inMobile} {
     flex-direction: column;
@@ -63,12 +63,12 @@ export const WrapperContent = styled.div`
   }
 
   h4 {
-    margin-top: 8px;
-    padding: 0 10px;
+    margin-top: ${pxToRem(8)};
+    padding: 0 ${pxToRem(10)};
   }
 
   h1 {
-    padding: 0 10px;
+    padding: 0 ${pxToRem(10)};
   }
 
   span {
@@ -88,8 +88,8 @@ export const CardFilm = styled.div`
   transform: scale(0.9);
 
   background-color: ${primaryDark};
-  border-radius: 4px;
-  margin-top: 8px;
+  border-radius: ${pxToRem(4)};
+  margin-top: ${pxToRem(8)};
 
   display: flex;
   flex-direction: column;
@@ -138,12 +138,12 @@ export const Banner = styled.img`
 
   filter: blur(0.2px) grayscale(100%);
 
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: ${pxToRem(4)};
+  border-top-left-radius: ${pxToRem(4)};
 `;
 
 export const ContentCardFilm = styled.div`
-  padding: 8px 16px;
+  padding: ${pxToRem(8)} ${pxToRem(16)};
 
   display: flex;
   flex-direction: column;
@@ -151,15 +151,15 @@ export const ContentCardFilm = styled.div`
   flex: 1;
 
   h4 {
-    font-size: 12px;
+    font-size: ${pxToRem(12)};
   }
 
   span.title {
-    font-size: 22px;
+    font-size: ${pxToRem(22)};
   }
 
   span.description {
-    font-size: 12px;
+    font-size: ${pxToRem(12)};
     text-align: justify;
   }
 `;
@@ -178,23 +178,23 @@ export const Line = styled.div`
   align-items: center;
 
   &:first-child {
-    margin-top: 30px;
+    margin-top: ${pxToRem(30)};
   }
 `;
 
 export const WrapperLoading = styled.button`
   margin: auto;
 
-  margin-bottom: 20px;
+  margin-bottom: ${pxToRem(20)};
 
   cursor: pointer;
   background-color: ${primaryMain};
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: ${pxToRem(8)} ${pxToRem(16)};
+  border-radius: ${pxToRem(8)};
   border: none;
 
   span {
-    font-size: 16px;
+    font-size: ${pxToRem(16)};
     color: ${primaryDark};
   }
 `;
