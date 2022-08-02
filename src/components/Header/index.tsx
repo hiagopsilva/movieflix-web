@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Container, IconLogoStyled } from './styles';
+import { Logo } from '~/assets/img';
+import { Container } from './styles';
 
 const Header: React.FC = () => (
   <Container>
-    <IconLogoStyled />
+    <img src={Logo} alt="" />
+
     <h1>MovieFlix</h1>
   </Container>
 );
