@@ -15,20 +15,26 @@ const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [limitPages, setLimitPages] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const loadingFilms = async () => {
+    setLoading(true);
+
     const data = await film.list(page);
 
     setTotal(data.total);
     setLimitPages(data.pages);
     setPage((page) => ++page);
+    setLoading(false);
   };
 
   const loadingMoreFilms = async () => {
+    setLoading(true);
     const data = await film.list(page);
 
     setTotal(data.total);
     setPage((page) => ++page);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -41,6 +47,7 @@ const HomeContainer: FC<Props> = ({ film }): JSX.Element => {
       total={total}
       loadingMoreFilms={loadingMoreFilms}
       limitPages={limitPages >= page}
+      loading={loading}
     />
   );
 };

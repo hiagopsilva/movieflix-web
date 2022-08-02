@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
-import { Footer, Header, If } from '~/components';
+import { Footer, Header, If, Loading } from '~/components';
 import {
   Banner,
   CardFilm,
@@ -21,6 +21,7 @@ type Props = {
   filmList: any[];
   total: number;
   limitPages: boolean;
+  loading: boolean;
 
   loadingMoreFilms: () => void;
 };
@@ -29,6 +30,7 @@ const Home: FC<Props> = ({
   filmList,
   total,
   limitPages,
+  loading,
 
   loadingMoreFilms,
 }): JSX.Element => (
@@ -70,6 +72,10 @@ const Home: FC<Props> = ({
           </If>
         </WrapperListFilms>
       </Content>
+
+      <If condition={loading}>
+        <Loading />
+      </If>
 
       <If condition={limitPages}>
         <WrapperLoading onClick={loadingMoreFilms}>

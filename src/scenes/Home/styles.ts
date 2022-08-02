@@ -1,8 +1,11 @@
-import { getTheme, styled } from '~/utils';
+import { styled } from '~/utils';
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+
+  flex: 1;
 
   height: auto;
 `;
