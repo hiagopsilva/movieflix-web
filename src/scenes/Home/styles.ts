@@ -132,6 +132,7 @@ export const Title = styled.span`
 
 export const Description = styled.span`
   font-size: 12px;
+  text-align: justify;
 `;
 
 export const Director = styled.span``;
