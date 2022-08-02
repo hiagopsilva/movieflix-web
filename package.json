@@ -43,6 +43,7 @@
     "build:dev": "env-cmd -f .env.dev yarn react-app-rewired build",
     "build:hml": "env-cmd -f .env.hml yarn react-app-rewired build",
     "build:prd": "env-cmd -f .env.prd yarn react-app-rewired build",
+    "build": "env-cmd -f .env.prd yarn react-app-rewired build",
     "test": "react-app-rewired test",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "pretty": "prettier --config ./.prettierrc --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
