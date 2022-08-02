@@ -7,7 +7,9 @@ type Props = {};
 
 const Home: FC<Props> = ({}): JSX.Element => (
   <Container>
-    <h1>Olá</h1>
+    <>
+      <h1>Olá</h1>
+    </>
   </Container>
 );
 

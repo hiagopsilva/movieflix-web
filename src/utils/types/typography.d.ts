@@ -15,4 +15,5 @@ declare type TypographyVariants =
 
 declare type TypographyType = {
   variant?: TypographyVariants;
+  children?: any;
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '~/utils/config/reactotron';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'mobx-react';
@@ -10,7 +11,9 @@ import { CssBaseline } from '@material-ui/core';
 import Routes from '~/routes';
 import store from '~/stores';
 import { breakpoints, colors, radius, spacings } from '~/theme';
+import { Home } from './scenes';
 import * as serviceWorker from './serviceWorker';
+
 import GlobalStyles from './theme/global';
 import { Toastify } from './utils/modules';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,7 +37,8 @@ ReactDOM.render(
       <Router history={routing}>
         <Toastify.ToastContainer />
 
-        <Routes />
+        {/* <Routes /> */}
+        <Home />
       </Router>
       <GlobalStyles />
     </ThemeProvider>
