@@ -5,7 +5,7 @@ import { UserStore } from '~/stores';
 import Home from './Home';
 
 type Props = {
-  user: UserStore;
+  user?: UserStore;
 };
 
 const HomeContainer: FC<Props> = (): JSX.Element => <Home />;
