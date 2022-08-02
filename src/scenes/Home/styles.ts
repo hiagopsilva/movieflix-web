@@ -87,9 +87,9 @@ export const CardFilm = styled.div`
 
 export const Banner = styled.img`
   width: 100%;
-  height: 180px;
+  height: auto;
 
-  filter: blur(0.5px) grayscale(100%);
+  filter: blur(0.2px) grayscale(100%);
 
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
