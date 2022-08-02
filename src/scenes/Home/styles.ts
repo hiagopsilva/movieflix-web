@@ -1,4 +1,8 @@
-import { styled } from '~/utils';
+import { getTheme, styled } from '~/utils';
+
+// Breakpoint
+const inMobile = getTheme('inMobile');
+const inTablet = getTheme('inTablet');
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -43,13 +47,21 @@ export const WrapperContent = styled.div`
 
   margin: 16px 0;
 
+  @media ${inMobile} {
+    flex-direction: column;
+  }
+
+  @media ${inTablet} {
+    flex-direction: column;
+  }
+
   h4 {
     margin-top: 8px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
   }
 
   h1 {
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
   }
 
   span {
@@ -100,6 +112,16 @@ export const CardFilm = styled.div`
     h4 {
       color: #46eb34;
     }
+  }
+
+  @media ${inMobile} {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  @media ${inTablet} {
+    width: 50%;
+    margin-top: 0;
   }
 `;
 
