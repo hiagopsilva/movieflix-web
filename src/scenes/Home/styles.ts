@@ -4,6 +4,13 @@ import { getTheme, styled } from '~/utils';
 const inMobile = getTheme('inMobile');
 const inTablet = getTheme('inTablet');
 
+// Colors
+const primaryContrast = getTheme('primary.contrast');
+const primaryLight = getTheme('primary.light');
+const primaryMain = getTheme('primary.main');
+const primaryDark = getTheme('primary.dark');
+const primaryText = getTheme('primary.text');
+
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -16,7 +23,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  background: #313136;
+  background: ${primaryContrast};
 
   display: flex;
   flex-direction: column;
@@ -27,7 +34,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 100%;
 
-  color: #fff;
+  color: ${primaryLight};
 
   display: flex;
   flex-direction: column;
@@ -65,7 +72,7 @@ export const WrapperContent = styled.div`
   }
 
   span {
-    color: #46eb34;
+    color: ${primaryMain};
   }
 `;
 
@@ -80,7 +87,7 @@ export const CardFilm = styled.div`
   width: 25%;
   transform: scale(0.9);
 
-  background-color: #111411;
+  background-color: ${primaryDark};
   border-radius: 4px;
   margin-top: 8px;
 
@@ -92,7 +99,7 @@ export const CardFilm = styled.div`
   }
 
   span.description {
-    color: #f9f9f9;
+    color: ${primaryText};
   }
 
   &:hover {
@@ -106,11 +113,11 @@ export const CardFilm = styled.div`
     }
 
     span.title {
-      color: #46eb34;
+      color: ${primaryMain};
     }
 
     h4 {
-      color: #46eb34;
+      color: ${primaryMain};
     }
   }
 
@@ -181,13 +188,13 @@ export const WrapperLoading = styled.button`
   margin-bottom: 20px;
 
   cursor: pointer;
-  background-color: #46eb34;
+  background-color: ${primaryMain};
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
 
   span {
     font-size: 16px;
-    color: #111411;
+    color: ${primaryDark};
   }
 `;

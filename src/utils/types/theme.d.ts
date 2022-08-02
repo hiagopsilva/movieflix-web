@@ -29,7 +29,6 @@ declare type ColorType = {
   warning: string;
   info: string;
   success: string;
-  disabled: ColorUniqueType;
   primary: ColorUniqueType;
   secondary: ColorUniqueType;
   tertiary: ColorUniqueType;

@@ -1,11 +1,15 @@
-import styled from 'styled-components';
+import { getTheme, styled } from '~/utils';
+
+// Colors
+const primaryLight = getTheme('primary.light');
+const primaryDark = getTheme('primary.dark');
 
 export const Container = styled.div`
   width: 100%;
   height: 120px;
-  background-color: #111411;
+  background-color: ${primaryDark};
 
-  color: #fff;
+  color: ${primaryLight};
 
   margin-top: auto;
 

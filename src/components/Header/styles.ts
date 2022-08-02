@@ -1,10 +1,14 @@
-import styled from 'styled-components';
+import { getTheme, styled } from '~/utils';
+
+// Colors
+const primaryMain = getTheme('primary.main');
+const primaryDark = getTheme('primary.dark');
 
 export const Container = styled.div`
   width: 100%;
   height: 60px;
 
-  background-color: #111411;
+  background-color: ${primaryDark};
   padding: 0 60px 0 60px;
 
   display: flex;
@@ -12,7 +16,7 @@ export const Container = styled.div`
   align-items: center;
 
   h1 {
-    color: #46eb34;
+    color: ${primaryMain};
     font-size: 24px;
     font-family: 'Manrope';
   }

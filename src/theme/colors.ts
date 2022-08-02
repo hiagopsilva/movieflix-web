@@ -4,18 +4,12 @@ export default {
   success: '#357a38',
   info: '#2196f3',
 
-  disabled: {
-    light: '',
-    main: '',
-    dark: '',
-    contrast: '',
-  },
-
   primary: {
-    light: '',
-    main: '',
-    dark: '',
-    contrast: '',
+    light: '#fff',
+    main: '#46eb34',
+    dark: '#111411',
+    text: '#f9f9f9',
+    contrast: '#313136',
   },
   secondary: {
     light: '',
