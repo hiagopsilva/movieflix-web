@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '~/utils/config/reactotron';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'mobx-react';
@@ -11,6 +12,7 @@ import Routes from '~/routes';
 import store from '~/stores';
 import { breakpoints, colors, radius, spacings } from '~/theme';
 import * as serviceWorker from './serviceWorker';
+
 import GlobalStyles from './theme/global';
 import { Toastify } from './utils/modules';
 import 'react-toastify/dist/ReactToastify.css';
