@@ -2,11 +2,8 @@ import ReactLoading from 'react-loading';
 import { getTheme, pxToRem, styled } from '~/utils';
 
 // Colors
-const primaryContrast = getTheme('primary.contrast');
 const primaryLight = getTheme('primary.light');
-const primaryMain = getTheme('primary.main');
 const primaryDark = getTheme('primary.dark');
-const primaryText = getTheme('primary.text');
 
 export const Container = styled.div`
   width: 100vw;

@@ -2,14 +2,13 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React, { FC } from 'react';
 import { isEmpty } from 'lodash';
-import { CardFilm, Footer, Header, If, Loading } from '~/components';
+import { Button, CardFilm, Footer, Header, If, Loading } from '~/components';
 import {
   Container,
   Content,
   Wrapper,
   WrapperContent,
   WrapperListFilms,
-  WrapperLoading,
 } from './styles';
 
 type Props = {
@@ -56,9 +55,7 @@ const Home: FC<Props> = ({
       </If>
 
       <If condition={limitPages}>
-        <WrapperLoading onClick={loadingMoreFilms}>
-          <span>Carregar mais </span>
-        </WrapperLoading>
+        <Button onClick={loadingMoreFilms} label="Carregar mais" />
       </If>
       <Footer />
     </Container>
