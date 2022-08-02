@@ -1,12 +1,12 @@
 import { create } from 'mobx-persist';
 import { RouterStore } from 'mobx-react-router';
-import UserStore from './user.store';
+import FilmStore from './film.store';
 
 class RootStore {
-  user: UserStore;
+  film: FilmStore;
 
   constructor() {
-    this.user = new UserStore();
+    this.film = new FilmStore();
   }
 }
 
@@ -16,7 +16,7 @@ const hydrate = create({
   storage: localStorage,
 });
 
-hydrate('user', store.user);
+hydrate('film', store.film);
 
-export { RouterStore, UserStore };
+export { RouterStore, FilmStore };
 export default store;
